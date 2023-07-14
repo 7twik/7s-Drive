@@ -8,20 +8,19 @@ const Own = ({contract,provider,account}) => {
         let total;
         const load = async () => {
           total = await contract.ownDisplay(account);
+          console.log(total);
             setOwn(total);
         }
         load();
         
     },[account,contract]);
-    // const click = async () => {
-    //       const res=await contract.ownDisplay(account);
-    //         console.log(res);
-    // }
   return (
     <div className='Owntop'>
         {own==undefined || own.length===0?<>No Pictures uploaded by you.</>:<>
             {own.map((url,key) => (
-                <Card key={key} url={url} address={account} />))}        
+                <>{(url!=="")?
+                <Card key={key} url={url} contract={contract} address={account} />:<></>}</>
+                ))}        
         </>}
     </div>
   )

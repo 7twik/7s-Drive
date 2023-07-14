@@ -1,21 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Federant&family=Poppins&family=Oregano&display=swap');
 .app{
     color: white;
     max-width: 100vw;
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: black;
+    /* background-color: black; */
    padding:5vh;
 }
 .centerLogo{
-    width:100vw;
+    width:calc(100vw - 10vh);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding-bottom: 15vh;
 }
 .logo{
     margin-top: 5vh;
-    width:40vw;
-    height:35vh;
+    width:30vw;
+    height:25vh;
     object-fit: cover;
 }
 .addText{
@@ -24,13 +29,15 @@
 .submitAdd{
     width:90px;
     height: 50px;
-    background-color: cadetblue;
+    background-color: rgb(241, 14, 109);
+    border:none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.944);
     border-radius: 10px;
 }
 .submitAdd:hover{
     cursor: pointer;
-    color:cadetblue;
-    background-color: white;
+    border:1px black solid;
+    box-shadow: none;
 }
 .addFileText{
     color:white;
@@ -40,6 +47,230 @@
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     margin-top: 5vh;
 }
+.heading{
+    width:40vw;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.logo1{
+    border-radius: 50%;
+    width:5vw;
+}
+.nav-tabs{
+    background-color: black;
+}
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: #f66700 !important;
+    --bs-nav-link-hover-color: rgb(241, 14, 109) !important;
+}
+.nav-tabs {
+    --bs-nav-tabs-border-width: var(--bs-border-width);
+    --bs-nav-tabs-border-color: var(--bs-border-color);
+    --bs-nav-tabs-border-radius: var(--bs-border-radius);
+    --bs-nav-tabs-link-hover-border-color: none !important;
+    --bs-nav-tabs-link-active-color: var(--bs-emphasis-color);
+    --bs-nav-tabs-link-active-bg: var(--bs-body-bg);
+    --bs-nav-tabs-link-active-border-color: rgb(241, 14, 109) !important;
+    border-bottom:var(--bs-nav-tabs-border-width) solid rgb(241, 14, 109) !important;
+}
+.nav-link:hover{
+    
+    --bs-nav-link-color: #ff9411 !important;
+}
+a:hover{
+    color:rgb(241, 14, 109) !important;
+}
+.nav-items .nav-fill{
+    background-color: rgb(179, 11, 11) !important;
+    font-family: 'Poppins', Times, serif !important;
+}
+.nav-link.active {
+    background: linear-gradient(to right, rgb(241, 14, 109),orange )  !important;
+    color: rgb(30, 4, 36) !important;
+    text-shadow: 1px 1px orange;
+}
+
+.nav-fill .nav-item, .nav-fill>.nav-link {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Poppins', Times, serif !important;
+}
+.dualbtn{
+    display: flex;
+    justify-content: space-around;
+}
+.react,.hardhat,.ipfs,.eth,.solidity,.pinata{
+    width:8vh;
+    height:8vh;
+    font-size: 2rem !important;
+}
+.react{
+    border-radius: 50% !important;
+    background-color:rgb(0, 132, 255) !important;
+}
+.react:hover{
+    background-color: white !important;
+    color:rgb(0, 132, 255) !important;
+}
+.hardhat{
+    border-radius: 50% !important;
+    background-color:yellow !important;
+    color:#1b130f !important;
+}
+.hardhat:hover{
+    background-color:#1b130f !important;
+    color:yellow !important;
+}
+.ipfs{
+    border-radius: 50% !important;
+    background-color:white !important;
+    color:teal !important;
+}
+.ipfs:hover{
+    background-color:teal !important;
+    color:white !important;
+}
+.pinata{
+    border-radius: 50% !important;
+    background:linear-gradient(to right,rgb(241, 14, 109),yellow,lime,aqua,orange) !important;
+    color:black !important;
+}
+.pinata:hover{
+    background: black!important;
+    color:rgb(241, 14, 109) !important;
+}
+.eth{
+    border-radius: 50% !important;
+    background-color:white !important;
+    color:rgb(70, 68, 68) !important;
+}
+.eth:hover{
+    background-color:rgb(70, 68, 68) !important;
+    color:white !important;
+}
+.solidity{
+    border-radius: 50% !important;
+    background-color:white !important;
+    color:black !important;
+}
+.solidity:hover{
+    background-color:black !important;
+    color:white !important;
+}
+.techbtn{
+    display: flex;
+    justify-content: center;
+}
+.about{
+    padding-top: 5vh;
+    font-family: 'Poppins', Times, serif !important;
+    color: rgb(241, 14, 109) !important;
+    text-align: center;
+    font-size: 30px;
+}
+.aboutd{
+    color: orange !important;
+    font-family:'Federant';
+}
+@media(max-width:850px){
+    .logo{
+        width:40vw;
+        height:9vh;
+    }
+    .logo{
+        margin:0;
+    }
+    .centerlogo{
+        width:calc(100vw - 10vh);
+    }
+    h6{
+        overflow-wrap: break-word;
+        font-size: 1rem;
+    }
+}
+.hov:hover{
+    color:rgb(241, 14, 109)  !important; 
+}
+.addTop{
+    padding-top:10vh;
+    width:calc(100vw - 10vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.file-field{
+    width:40vw;
+    height:40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border:1px solid rgb(241, 82, 14);
+    background-color: rgba(243, 146, 9, 0.841);  
+    backdrop-filter: blur(30px);
+    /* opacity:0.5; */
+    box-shadow: 6px 8px 43px -10px rgba(241, 113, 13, 0.8);
+    border-radius: 50px;
+}
+.card{
+    /* --bs-card-bg:rgb(187, 186, 212) !important; */
+    /* border:1px solid rgb(241, 82, 14) !important; */
+    background-color: rgba(153, 127, 127, 0.379) !important;  
+    backdrop-filter: blur(30px) !important;
+    /* opacity:0.5; */
+    /* box-shadow: 6px 8px 43px -10px rgba(241, 113, 13, 0.8) !important; */
+}
+.btn-primary {
+    margin-right: 5vw;
+    --bs-btn-color: #1b130f !important;
+    --bs-btn-bg: rgb(241,14,109) !important;
+    --bs-btn-border-color: #591030 !important;
+    --bs-btn-hover-color: rgb(0, 0, 0) !important;
+    --bs-btn-hover-bg: rgb(241, 82, 14) !important;
+    --bs-btn-hover-border-color: #ca840a !important;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    width: 7vh;
+    height: 7vh;
+        border-radius:50% !important;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ca700a;
+    --bs-btn-active-border-color: #be7c0a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #fd9d0d !important;
+    --bs-btn-disabled-border-color: #fd610d !important;
+}
+body{
+    background: url("https://cutewallpaper.org/21/gif-background-1920x1080/Space-Stars-Black-Background-Gif-1920x1080-.gif") !important;
+    background-size: 100%;
+    width:100vw;
+    height:200vh;
+}
+.cardTop{
+    padding-left: 5vw;
+    padding-bottom: 5vh;
+}
+.addImText{
+
+}
+@media(max-width:850px){
+    .cardTop{
+        padding-left: 0;
+    }
+    .file-field{
+        width:90vw;
+        height:40vh;
+    }
+}
+/*                                 */
+
+
+
+/*//////////////////////////////////////*/

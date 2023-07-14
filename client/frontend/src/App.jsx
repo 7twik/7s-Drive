@@ -3,11 +3,17 @@ import './App.css'
 import Drive from './artifacts/contracts/Drive.sol/Drive.json'
 import {ethers} from 'ethers'
 import Heading from './Heading';
+import Shared from './Shared';
+import Button from 'react-bootstrap/esm/Button';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Add from './Add';
 import Own from './Own';
-
+import {GiPinata} from 'react-icons/gi'
+import {SiSolidity, SiIpfs} from 'react-icons/si'
+import Footer from './Footer';
+import {FaHardHat, FaReact, FaEthereum} from 'react-icons/fa'
+import { motion } from "framer-motion";
 function App() {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
@@ -55,8 +61,8 @@ function App() {
   }, []);
   return (
     <div className='app'>
-      <Heading />
-     Account: {account}
+      <Heading account={account} />
+     
      <div>
      <Tabs
       defaultActiveKey="Add"
@@ -64,19 +70,72 @@ function App() {
       className="mb-3"
       fill
     >
-      <Tab eventKey="Add" title="Add">
-        <div className='addText'>Add Image<br />
+      <Tab eventKey="Add" title="Add Image">
+        <div className='addText'>
         <Add contract={contract} account={account} provider={provider} />
         </div>
         </Tab>
-      <Tab eventKey="profile" title="Own">
+      <Tab eventKey="profile" title="Own Images">
       <Own contract={contract} account={account} provider={provider} />
       </Tab>
-      <Tab eventKey="contact" title="Shared">
-        Tab content for Contact
-      </Tab>
+      <Tab eventKey="contact" title="Shared Images">
+        <Shared account={account} contract={contract} />
+        </Tab>
+        <Tab eventKey="about" title="What is this app for?">
+        <div className='about'> 
+          So this is an <span className='aboutd'>decentralized</span> drive app.<br />
+          <br />
+          <div className="techbtn">
+          <span className='aboutd'>Tech Stack: &nbsp;</span> &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='react' variant="secondary"><FaReact /></Button></motion.div> &nbsp;, &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='solidity' variant="secondary"><SiSolidity /></Button></motion.div> &nbsp;,  &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='pinata' variant="secondary"><GiPinata /></Button></motion.div> &nbsp;, &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='eth' variant="secondary"><FaEthereum /></Button></motion.div> &nbsp;,  &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='hardhat' variant="secondary"><FaHardHat /></Button></motion.div> &nbsp;,  &nbsp;
+          <motion.div
+          className="box"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button className='ipfs' variant="secondary"><SiIpfs /></Button></motion.div></div><br />
+          
+        </div>
+        <Footer />
+          </Tab>
     </Tabs>
      </div>
+     
     </div>
   )
 }
