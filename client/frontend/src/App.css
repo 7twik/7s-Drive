@@ -1,0 +1,45 @@
+.app{
+    color: white;
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: black;
+   padding:5vh;
+}
+.centerLogo{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    margin-top: 5vh;
+    width:40vw;
+    height:35vh;
+    object-fit: cover;
+}
+.addText{
+    color:white;
+}
+.submitAdd{
+    width:90px;
+    height: 50px;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+.submitAdd:hover{
+    cursor: pointer;
+    color:cadetblue;
+    background-color: white;
+}
+.addFileText{
+    color:white;
+    
+}
+.Owntop{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5vh;
+}
