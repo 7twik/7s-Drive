@@ -14,20 +14,36 @@ import {SiSolidity, SiIpfs} from 'react-icons/si'
 import Footer from './Footer';
 import {FaHardHat, FaReact, FaEthereum} from 'react-icons/fa'
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
 
+  const notify = () => toast("Please switch network this app is deployed on Mumbai testnet,\n if you are using Metamask then switch to Mumbai testnet, \n chainID:80001, \n symbol: Matic, \n RPC URL: https://rpc-mumbai.maticvigil.com/, \nName: Mumbai Testnet");
+  
+  const notify2 = () => toast("Metamask is not downloaded please go to https://metamask.io/ and download it");
+  useEffect(() => {
+    const getChain = async () => {
+      let ch=await provider.getNetwork();
+      console.log(ch);
+      if(ch.chainId !== 80001)
+      {
+        notify();
+      }
+    }
+    getChain();
+  },[provider]);
   useEffect(() => {
     if (window.ethereum == null) {
       alert("MetaMask not installed; using read-only defaults");
       console.log("MetaMask not installed; using read-only defaults")
       setProvider(ethers.getDefaultProvider());
-  
+      notify2();
     } else {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-      
+        console.log(provider);
         const loadProvider = async () => {
           if (provider) {
             window.ethereum.on("chainChanged", () => {
@@ -41,7 +57,7 @@ function App() {
             const signer = await provider.getSigner();
             const address = await signer.getAddress();
             setAccount(address);
-            let contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+            let contractAddress = "0xC3Ba30c050Fc7094784bAaaB2b30471FdEaa1EBA";
 
             const contract = new ethers.Contract(
               contractAddress,
@@ -62,7 +78,7 @@ function App() {
   return (
     <div className='app'>
       <Heading account={account} />
-     
+      <ToastContainer />
      <div>
      <Tabs
       defaultActiveKey="Add"
